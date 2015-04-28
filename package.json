@@ -1,23 +1,18 @@
 {
-  "name": "handspiel-plugin-applicationcache-remover",
-  "version": "0.1-dev",
-  "description": "Removes the ApplicationCache.db in iOS.",
-  "cordova": {
-    "id": "handspiel-plugin-applicationcache-remover",
+    "version": "1.0.0",
+    "name": "net.handspiel.plugin.applicationcache.remover",
+    "cordova_name": "ApplicationCache Remover",
+    "description": "Removes the ApplicationCache.db in iOS.",
+    "license": "CC BY 4.0",
+    "repo": "https://github.com/kloener/handspiel-plugin-applicationcache-remover.git",
+    "keywords": [
+        "cordova",
+        "applicationcache",
+        "appcache",
+        "manifest"
+    ],
     "platforms": [
-      "ios"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kloener/handspiel-plugin-applicationcache-remover.git"
-  },
-  "keywords": [
-    "cordova",
-    "applicationcache",
-    "appcache",
-    "manifest"
-  ],
-  "author": "HANDSPIEL GmbH",
-  "license": "Apache 2.0"
+        "ios"
+    ],
+    "engines": []
 }

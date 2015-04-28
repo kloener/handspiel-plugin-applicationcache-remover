@@ -5,13 +5,9 @@ to clear the complete applicationCache from the **current app** on iOS devices.
 
 ## Installation
 
-    cordova plugin add handspiel-plugin-applicationcache-remover
+    cordova plugin add https://github.com/kloener/handspiel-plugin-applicationcache-remover.git
 
-For iOS platform, after you add the plugin, you will also have to add "libsqlite3.dylib" for linking. To do that, perform the following:
-
-* Click on the project name on the left pane in XCode. That would load the project configurations.
-* Click on the 'Build Phases' tab. Next select 'Link Binary With Libraries'
-* Click the '+' icon to add a library. In the dialog box that appears, search for sqlite and select "libsqlite3.0.dylib".
+I will push it to the cordova plugins repo soon. 
 
 ## Properties
 
