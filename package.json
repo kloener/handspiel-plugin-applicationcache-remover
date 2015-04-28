@@ -1,0 +1,19 @@
+{
+  "name": "handspiel-plugin-applicationcache-remover",
+  "version": "0.5-dev",
+  "description": "Removes the ApplicationCache.db in iOS.",
+  "cordova": {
+    "id": "handspiel-plugin-applicationcache-remover",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "applicationcache",
+    "appcache",
+    "manifest"
+  ],
+  "author": "HANDSPIEL GmbH",
+  "license": "Apache 2.0"
+}
