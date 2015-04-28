@@ -8,6 +8,7 @@
 */
 
 #import <Cordova/CDVPluginResult.h>
+#import "HNDApplicationCacheRemover.h"
 
 @implementation HNDApplicationCacheRemover
 
@@ -24,16 +25,15 @@ static NSString *cacheDatabaseName = @"ApplicationCache.db";
         No database means no cache so the command is okay.
        */
       pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    }
-
-    if (![[NSFileManager defaultManager] removeItemAtPath:[self cacheDatabasePath]]) {
-        NSLog(@"HNDApplicationCacheRemover: The cache manifest db could not be deleted!");
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"could not delete database."];
     } else {
-      // files was deleted successfully so return command okay.
-      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+      if (![[NSFileManager defaultManager] removeItemAtPath:[self cacheDatabasePath] error:nil]) {
+          NSLog(@"HNDApplicationCacheRemover: The cache manifest db could not be deleted!");
+          pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"could not delete database."];
+      } else {
+        // files was deleted successfully so return command okay.
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+      }
     }
-
     // setKeepCallback is for async processes.. isn't it?
     // [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
 
