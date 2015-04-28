@@ -6,7 +6,6 @@
 
  @author Christian Illies
 */
-
 #import <Cordova/CDVPluginResult.h>
 #import "HNDApplicationCacheRemover.h"
 
@@ -30,6 +29,12 @@ static NSString *cacheGroupTable = @"CacheGroups";
       pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     }
     else {
+      /**
+       * TODO: use background thread, maybe.
+       */
+      /*
+        @source http://www.benjaminloulier.com/posts/clear-the-html5-application-cache-of-an-uiwebview/
+       */
       if (sqlite3_open([[self cacheDatabasePath]  UTF8String], &newDBconnection) == SQLITE_OK) {
         if (sqlite3_exec(newDBconnection, "BEGIN EXCLUSIVE TRANSACTION", 0, 0, 0) != SQLITE_OK) {
           NSLog(@"SQL Error: %s", sqlite3_errmsg(newDBconnection));
@@ -64,6 +69,8 @@ static NSString *cacheGroupTable = @"CacheGroups";
 
 /**
  * deletes all entries if the given table in the sqlite connection
+ *
+ * @source http://www.benjaminloulier.com/posts/clear-the-html5-application-cache-of-an-uiwebview/
  *
  * @param NSString table the table you wanna clear
  * @param sqlite3 db connection to the sqlite database
