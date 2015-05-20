@@ -31,6 +31,11 @@ Example:
 
 * iOS
 
+## TODOs
+
+* support Android
+* use 'cordova' as namespace instead of the 'ApplicationCacheRemover' global. So a method call would look like `cordova.ApplicationCacheRemover.clear()` instead of the example above.
+
 ## Licence
 
 The MIT License (MIT)
